@@ -1,0 +1,14 @@
+{
+  "name": "excelmerge",
+  "version": "1.0.0",
+  "description": "excel合并统计",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "xy",
+  "license": "ISC",
+  "dependencies": {
+    "node-xlsx": "^0.14.1"
+  }
+}
