@@ -1,4 +1,4 @@
-# 基于nodejs的excel表格处理插件，所有想要运行需要先安装nodejs环境
+# 基于nodejs的excel表格处理插件，运行前需先安装nodejs环境
 
 ### 背景
 
