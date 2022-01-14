@@ -9,7 +9,7 @@ const _output = `${__dirname}/result/`
 let excludeSheet = ['PMO汇总', '角色（仅筛选使用）']
 // 原 excel 表中的数据集
 init('项目&人员统计表.xlsx', [mergeData, countFunctionUsers])
-// init('20220107-智慧建筑研究院项目&人员统计表.xlsx', [mergeData])
+// init('项目&人员统计表.xlsx', [mergeData])
 
 async function init (excelName, callbacks) {
 	if (!excelName) {
