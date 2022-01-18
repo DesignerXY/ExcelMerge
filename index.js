@@ -9,7 +9,7 @@ const _output = `${__dirname}/result/`
 let excludeSheet = ['PMO汇总', '角色（仅筛选使用）']
 // 原 excel 表中的数据集
 init('项目&人员统计表.xlsx', [mergeData, countFunctionUsers])
-// init('项目&人员统计表.xlsx', [mergeData])
+// init('20220107-智慧建筑研究院项目&人员统计表.xlsx', [mergeData])
 
 async function init (excelName, callbacks) {
 	if (!excelName) {
@@ -159,8 +159,8 @@ function getFunctionsUsers(excelData) {
 // 获取 角色 用户 对应项目模块功能 [{role,user,[f1,f2,f3,f4]}]
 function getRoleUserFunctions(excelData) {
 	let newData = [
-			['','','',''],	// 角色行
-			['','','','']	// 用户行
+			[null,null,null,null],	// 角色行
+			[null,null,null,null]	// 用户行
 		]
 	for (let sheet of excelData) {
 		// 排除 sheet
@@ -197,7 +197,7 @@ function getRoleUserFunctions(excelData) {
 						newData[1].push(users[ri])
 						// 原来的项目模块功能行对应加一列
 						for (let rowIndex=2; rowIndex<newData.length; rowIndex++) {
-							newData[rowIndex].push('')
+							newData[rowIndex].push(null)
 						}
 					} else {
 						// 需要看下原来这个角色下有没有用户
@@ -214,7 +214,7 @@ function getRoleUserFunctions(excelData) {
 							newData[1].splice(endRoleIndex+1, 0, users[ri])
 							// 原来的项目模块功能行对应加一列
 							for (let rowIndex=2; rowIndex<newData.length; rowIndex++) {
-								newData[rowIndex].splice(endRoleIndex+1, 0, '')
+								newData[rowIndex].splice(endRoleIndex+1, 0, null)
 							}
 						}
 					}
@@ -271,7 +271,7 @@ function getRoleUserFunctions(excelData) {
 				let functionsRow = [f1,f2,f3,f4]
 				for (let columnIndex=4; columnIndex<newData[0].length; columnIndex++) {
 					if (checkedIndexs.indexOf(columnIndex) === -1) {
-						functionsRow.push('')
+						functionsRow.push(null)
 					} else {
 						functionsRow.push('√')
 					}
